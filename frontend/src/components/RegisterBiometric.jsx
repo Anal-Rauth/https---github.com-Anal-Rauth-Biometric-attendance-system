@@ -11,7 +11,7 @@ const RegisterBiometric = () => {
                 </button>
             </div>
         </div>
-    );
+    ); 
 };
 
 export default RegisterBiometric;
