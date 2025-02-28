@@ -196,7 +196,50 @@ body {
   transform: scale(1.1);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
+.home-welcome {
+  font-size: 28px;
+  font-weight: 700;
+  /* Bolder text */
+  font-family: 'Poppins', sans-serif;
+  /* Stylish and modern font */
+  color: #2c3e50;
+  /* Dark Blue shade */
+  text-align: center;
+  margin-top: 20px;
+  padding: 5px;
+  text-transform: uppercase;
+  /* Optional: Makes text uppercase for emphasis */
+  letter-spacing: 1px;
+  /* Adds slight spacing for a stylish look */
+}
 
+/* Add a stylish underline effect */
+.home-welcome::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 4px;
+  background-color: #3498db;
+  /* Blue underline */
+  margin: 8px auto 0;
+  border-radius: 5px;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .home-welcome {
+    font-size: 24px;
+    font-weight: 600;
+    /* Slightly reduce weight for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .home-welcome {
+    font-size: 22px;
+    font-weight: 600;
+  }
+}
 .register-btn {
   background: linear-gradient(135deg, #ff7eb3, #ff4081);
   color: white;
@@ -236,6 +279,47 @@ body {
   text-shadow: 2px 2px 5px rgba(255, 64, 129, 0.3);
   animation: fadeIn 1s ease-in-out;
 }
+.logout-btn {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: auto;
+  /* Adjusts width automatically */
+  max-width: 200px;
+  /* Prevents excessive stretching */
+}
+
+/* Hover effect */
+.logout-btn:hover {
+  background-color: darkred;
+  transform: scale(1.05);
+  /* Slight zoom effect on hover */
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+  .logout-btn {
+    padding: 8px 16px;
+    font-size: 14px;
+    max-width: 150px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .logout-btn {
+    padding: 6px 12px;
+    font-size: 12px;
+    max-width: 120px;
+  }
+}
+
+
 /* Stylish Capture Button */
 /* .capture-btn {
   background: linear-gradient(135deg, #ff416c, #ff4b2b);

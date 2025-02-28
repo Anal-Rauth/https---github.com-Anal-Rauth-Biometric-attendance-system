@@ -17,7 +17,6 @@
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
     width: 100%;
     max-width: 400px;
-    /* Responsive Width */
     box-sizing: border-box;
 }
 
@@ -85,27 +84,154 @@
     text-decoration: underline;
 }
 
+/* Stylish Go to Login/Signup Button */
 .auth-link {
     display: inline-block;
+    padding: 14px 26px;
     margin-top: 20px;
-    padding: 12px 24px;
-    font-size: 16px;
-    font-weight: bold;
-    text-transform: uppercase;
-    text-decoration: none;
+    background: linear-gradient(135deg, #007bff, #0056b3);
     color: white;
-    background: linear-gradient(45deg, #ff6b6b, #ff4757);
-    border-radius: 8px;
-    transition: all 0.3s ease-in-out;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-    border: none;
-    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 30px;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.4s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+    position: relative;
+    overflow: hidden;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    width: 100%;
+    max-width: 280px;
 }
 
+/* Light Reflection Effect */
+.auth-link::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: all 0.4s ease-in-out;
+}
+
+.auth-link:hover::before {
+    left: 100%;
+}
+
+/* Hover Effect */
 .auth-link:hover {
-    background: linear-gradient(45deg, #ff4757, #ff6b6b);
-    transform: scale(1.05);
-    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, #0056b3, #003f7f);
+    box-shadow: 0 6px 15px rgba(0, 86, 179, 0.5);
+    transform: scale(1.08);
+}
+
+/* User Selection Page */
+.selection-container {
+    text-align: center;
+    padding: 50px 20px;
+    min-height: 75vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.selection-container h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.selection-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.selection-btn {
+    padding: 14px 28px;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all 0.4s ease-in-out;
+    width: 100%;
+    max-width: 220px;
+    text-align: center;
+    border: 2px solid transparent;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Glow effect on hover */
+.selection-btn:hover {
+    background: linear-gradient(135deg, #0056b3, #00408a);
+    border: 2px solid #ffffff66;
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(0, 86, 179, 0.5);
+}
+
+/* Adding a subtle glowing effect */
+.selection-btn::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 10%, transparent 70%);
+    transition: all 0.4s ease-in-out;
+    opacity: 0;
+}
+
+.selection-btn:hover::before {
+    opacity: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .selection-container {
+        padding: 30px 15px;
+    }
+
+    .selection-container h2 {
+        font-size: 20px;
+    }
+
+    .selection-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .selection-btn {
+        font-size: 16px;
+        padding: 12px 24px;
+        max-width: 190px;
+    }
+}
+
+@media (max-width: 480px) {
+    .selection-container {
+        padding: 20px 10px;
+    }
+
+    .selection-container h2 {
+        font-size: 18px;
+    }
+
+    .selection-btn {
+        font-size: 14px;
+        padding: 10px 20px;
+        max-width: 170px;
+    }
 }
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -131,6 +257,12 @@
     .switch-text {
         font-size: 0.85rem;
     }
+
+    .auth-link {
+        font-size: 16px;
+        padding: 12px 24px;
+        max-width: 250px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -154,5 +286,11 @@
 
     .switch-text {
         font-size: 0.8rem;
+    }
+
+    .auth-link {
+        font-size: 14px;
+        padding: 10px 22px;
+        max-width: 220px;
     }
 }
