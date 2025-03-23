@@ -294,3 +294,33 @@
         max-width: 220px;
     }
 }
+.toggle-text {
+    margin-top: 12px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.toggle-link {
+    color: #007bff;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.toggle-link:hover {
+    text-decoration: underline;
+}
+
+.go-back-btn {
+    margin-top: 10px;
+    background-color: #d33d22;
+    color: white;
+    width: 50%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.go-back-btn:hover {
+    background-color: #a82210;
+}

@@ -22,7 +22,7 @@ const Home = () => {
 
     return (
         <div className="home-container">
-            {/* Show welcome message only if an admin is logged in */}
+            {/* Show welcome message only if an admin is logged in
             {adminName ? (
                 <>
                     <h2 className="home-welcome">Welcome, {adminName}</h2>
@@ -30,7 +30,7 @@ const Home = () => {
                 </>
             ) : (
                 <h2 className="home-welcome">Please Log In</h2>
-            )}
+            )} */}
 
             <h1 className="home-title">Welcome to the Biometric Attendance System</h1>
             <p className="home-description">
@@ -41,8 +41,8 @@ const Home = () => {
                 <a href="/check-attendance" className="home-btn">Check Attendance</a>
             </div>
 
-            {/* Show login/signup link only if no admin is logged in */}
-            {!adminName && <Link to="/user-selection" className="auth-link">Go to Login / Sign Up</Link>}
+            {/* Show login/signup link only if no admin is logged in
+            {!adminName && <Link to="/user-selection" className="auth-link">Go to Login / Sign Up</Link>} */}
         </div>
     );
 };

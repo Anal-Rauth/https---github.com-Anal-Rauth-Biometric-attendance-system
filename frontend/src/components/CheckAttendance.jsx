@@ -1,7 +1,55 @@
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import "../pages/Auth.css";
+
 const CheckAttendance = () => {
+    const navigate = useNavigate();
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [userType, setUserType] = useState(null);
+
+    // Check if any user is logged in
+    useEffect(() => {
+        const adminName = localStorage.getItem("adminName");
+        const userName = localStorage.getItem("loggedInUser");
+
+        if (adminName) {
+            setIsLoggedIn(true);
+            setUserType("admin");
+        } else if (userName) {
+            setIsLoggedIn(true);
+            setUserType("old user");
+        }
+    }, []);
+
+    // Handle Check Attendance button click
     const handleCheckAttendance = () => {
-        // Assuming the backend generates and provides an Excel file
-        window.location.href = "http://localhost:5000/check-attendance";
+        if (!isLoggedIn) {
+            const userTypeInput = prompt(
+                "Who are you? (Type 'Admin' or 'Old user')"
+            );
+
+            switch (userTypeInput?.toLowerCase()) {
+                case "admin":
+                    navigate("/admin-login");
+                    break;
+                case "old user":
+                    navigate("/old-user");
+                    break;
+                default:
+                    alert("Invalid option! Please type 'admin' or 'old user'.");
+            }
+        } else {
+            // Check attendance for logged-in users
+            if (userType === "admin") {
+                alert("Generating Admin's Attendance Excel Sheet...");
+                navigate("/generate-admin-excel"); // Redirect to Admin Excel Sheet Generation
+            } else if (userType === "old user") {
+                alert("Generating Your Attendance Excel Sheet...");
+                navigate("/generate-user-excel"); // Redirect to User Excel Sheet Generation
+            } else {
+                alert("Invalid user type.");
+            }
+        }
     };
 
     return (
